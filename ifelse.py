@@ -33,3 +33,33 @@ for item in lst:
     if item % 2 == 0:
         continue
     print("Item:{0}".format(item))
+
+print("---range 함수---")
+print( list(range(10)) )
+print( list(range(1,11)) )
+print( list(range(2000,2023)) )
+
+print("---리스트 내장---")
+lst = list(range(1,11))
+print( [i**2 for i in lst if i > 5] )
+tp = ("apple","orange","kiwi")
+print( [len(i) for i in tp] )
+
+print("---필터링 없음---")
+lst = [20,25,30]
+iterL = filter(None,lst)
+for item in iterL:
+    print(item)
+
+print("---필터링 있음---")
+def getBiggerThan20(i):
+    return i > 20
+lst = [20,25,30]
+iterL = filter(getBiggerThan20,lst)
+for item in iterL:
+    print(item)    
+
+print("---람다함수 사용---")
+iterL = filter(lambda x:x>20,lst)
+for item in iterL:
+    print(item)
