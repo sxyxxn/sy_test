@@ -1,4 +1,7 @@
 # demoFile.py
+from cmath import pi
+
+
 for x in range(1,6):
     print(x,"*",x,"=",x*x)
 
@@ -34,7 +37,14 @@ print( f.tell() )
 # 리셋
 f.seek(0)
 lst = f.readlines()
-print(lst)
+#print(lst)
+for item in lst:
+    print(item, end="") # 기본값은 end="\n". 빈 줄 안나오게 하려고 ""로 씀
+
+print("---한줄씩 처리---")
+f.seek(0)
+print( f.readline(),end="" )
+print( f.readline(),end="" )
 
 f.close()
 # print(f.closed)
