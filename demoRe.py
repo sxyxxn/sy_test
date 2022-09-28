@@ -13,3 +13,11 @@ print(result.group())   # 찾은 것을 문자로 보여줌(?)
 
 # search는 "  35th" 처럼 빈칸이 있어도 찾지만 match는 빈칸에 대한 명령은 없었으므로 찾지 못함
 # (보통 search 사용)
+
+result = re.search("apple","this is apple")
+print(result.group())
+
+print("---년도 찾기---")
+print( bool(re.search("\d{4}","올해는 2022년")) )
+result = re.search("\d{5}","우리 동네는 52300")
+print(result.group())
