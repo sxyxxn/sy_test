@@ -29,5 +29,12 @@ f = open("c:/work/demo.txt", "rt", encoding="utf-8")
 # 처음부터 끝까지 하나의 문자열
 result = f.read()
 print(result)
+# 어디쯤 읽고 있어?
+print( f.tell() )
+# 리셋
+f.seek(0)
+lst = f.readlines()
+print(lst)
+
 f.close()
-print(f.closed)
+# print(f.closed)
