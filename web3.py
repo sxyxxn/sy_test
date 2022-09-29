@@ -1,6 +1,6 @@
 # web2.py
 # 웹서버에 요청
-from re import L
+#from re import L
 import urllib.request
 # 크롤링
 from bs4 import BeautifulSoup
