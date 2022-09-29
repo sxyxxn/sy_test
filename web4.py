@@ -11,15 +11,15 @@ def set_chrome_driver():
 
 #이 부분을 수정한다. 
 driver = set_chrome_driver()
-driver.implicitly_wait(3)
+driver.implicitly_wait(3)                           # 3초 기다렸다가
 #driver.get('https://google.com')
-driver.get('https://nid.naver.com/nidlogin.login')
+driver.get('https://nid.naver.com/nidlogin.login')  # 이 주소로 이동
 
 #아래의 코드도 수정됨 
 userID = driver.find_elements(By.ID, 'id')[0]
 userPwd = driver.find_elements(By.ID, 'pw')[0]
-userID.send_keys("kim")
-userPwd.send_keys("1234")
+userID.send_keys("kim")     #id 입력
+userPwd.send_keys("1234")   #암호 입력
 
 #로그인버튼 클릭 
 # btn = driver.find_elements(By.ID, 'log.login')
