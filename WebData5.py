@@ -25,12 +25,12 @@ class Form(QMainWindow):
 
         self.tableWidget = QTableWidget(self)
         self.tableWidget.move(20, 70)
-        self.tableWidget.resize(800, 600)
-        self.tableWidget.setRowCount(50)  #행의 갯수 
+        self.tableWidget.resize(800, 600)   #만든 행,컬럼의 크기
+        self.tableWidget.setRowCount(50)    #행의 갯수 
         self.tableWidget.setColumnCount(2)  #컬럼의 갯수 
         #컬럼의 폭을 지정한다. 0번 1번 
-        self.tableWidget.setColumnWidth(0, 300)
-        self.tableWidget.setColumnWidth(1, 300)
+        self.tableWidget.setColumnWidth(0, 300) #0번째 열의 폭
+        self.tableWidget.setColumnWidth(1, 300) #1번째 열의 폭
         
         #self.setTableWidgetData()
         self.tableWidget.doubleClicked.connect(self.doubleClicked)
@@ -73,6 +73,7 @@ class Form(QMainWindow):
              
             f.close()
 
+    # 더블클릭하면 웹페이지 열기
     def doubleClicked(self):
         url = self.tableWidget.item(self.tableWidget.currentRow(), 1).text()
         webbrowser.open(url) 

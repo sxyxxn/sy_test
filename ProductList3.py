@@ -1,3 +1,4 @@
+#DB파일을 다루면서 실행파일 만드는 코드
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import pyqtSlot, Qt
@@ -5,13 +6,15 @@ from PyQt5 import uic
 import sqlite3
 import os.path 
 
-#DB파일이 없으면 만들고 있다면 접속한다. 
+
+#DB파일이 현재 폴더에 없으면 만들고 있다면 접속한다. 
 if os.path.exists("ProductList.db"):
     con = sqlite3.connect("ProductList.db")
     cur = con.cursor()
 else: 
     con = sqlite3.connect("ProductList.db")
     cur = con.cursor()
+    # 테이블 생성
     cur.execute(
         "create table Products (id integer primary key autoincrement, Name text, Price integer);")
 
